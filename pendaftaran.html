@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #007bff;
+            padding: 0 8px;
+        }
+
+        label {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        radio-group,
+        checkbox-group {
+            margin: 8px 0 15px;
+        }
+
+        radio-group label,
+        checkbox-group label {
+            font-weight: normal;
+            margin: 3px 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 6px;
+        }
+
+        button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        .btn-kirim {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-kirim:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-reset {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #a71d2a;
+        }
+
+        .required {
+            color: red;
+        }
+    
+
+    </style>
+</head>
+ 
+<body>
+    <h1>Form Registrasi Ekstrakurikuler</h1>
+    <form action="http://rplcoders.com/proses.php" method="post">
+        <fieldset>
+            <legend>Data Pribadi</legend>
+            <label for="nama">Nama Lengkap</label><br>
+            <input required type="text" name="nama" id="name" placeholder="ketikkan nama lengkap"><br>
+            <label for="tglahir">Tanggal Lahir</label><br>
+            <input type="date" name="tglahir" id="tglahir"><br>
+            <label for="alamat">Alamat Lengkap</label><br>
+            <textarea name="alamat" id="alamat" cols="30" rows="5"></textarea><br>
+            <label for="jk">Jenis Kelamin</label>
+            <input checked type="radio" name="jk" id="jk1" value="1">Laki-Laki
+            <input type="radio" name="jk" id="jk2" value="2">Perempuan<br>
+            <label for="kelas">Kelas</label><br>
+            <select name="kelas" id="kelas">
+                <option value="xrpl1">XI RPL 1</option>
+                <option value="xrpl2">XI RPL 2</option>
+                <option value="xtkj1">XI TKJ 1</option>
+                <option value="XTKJ2">XI TKJ 2</option>
+                <option value="xdpib1">XI DPIB 1</option>
+                <option value="xdpib2">XI DPIB 2</option>
+            </select><br>
+            <label for="foto">Pas Foto </label><br>
+            <input type="file" name="foto" id="foto">
+        </fieldset>
+        <fieldset>
+            <legend>Ekstrakurikuler</legend>
+            <label for="ekskul">Pilihan Ekstrakurikuler (bisa lebih dari 1):</label><br>
+            <input type="checkbox" name="ekskul[]" id="ekskul1" value="badminton">Badminton <br>
+            <input type="checkbox" name="ekskul[]" id="ekskul2" value="sepak bola">Sepak Bola <br>
+            <input type="checkbox" name="ekskul[]" id="ekskul3" value="futsal">Futsal <br>
+            <input type="checkbox" name="ekskul[]" id="ekskul4" value="drum band">Drum Band <br><br>
+            <label for="motivasi">Motivasi Anda Mengikuti Ekskul </label><br>
+            <textarea name="motivasi" id="motivasi"></textarea>
+        </fieldset>
+        <label for="token">Token</label>
+        <input type="password" name="token" id="token">
+        <br><br>
+        
+       <div class="buttons">
+            <button type="submit" class="btn-kirim">
+                Kirim
+            </button>
+
+            <button
+                type="reset"
+                class="btn-reset"
+                onclick="return confirm('Apakah Anda yakin ingin mereset form?')">
+                Reset
+            </button>
+        </div>
+          </form>
+</body>
+ 
+</html>

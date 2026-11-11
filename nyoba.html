@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi Ekstrakurikuler</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #007bff;
+            padding: 0 8px;
+        }
+
+        label {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin: 8px 0 15px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+            margin: 3px 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 6px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        .btn-kirim {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-kirim:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-reset {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #a71d2a;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Form Registrasi Ekstrakurikuler</h1>
+
+    <form action="http://rplcoders.com/proses.php"
+          method="post"
+          enctype="multipart/form-data">
+
+        <!-- Data Pribadi -->
+        <fieldset>
+            <legend>Data Pribadi</legend>
+
+            <label for="nama">
+                Nama Lengkap <span class="required">*</span>
+            </label>
+            <input
+                required
+                type="text"
+                name="nama"
+                id="nama"
+                placeholder="Ketikkan nama lengkap">
+
+            <label for="tglahir">Tanggal Lahir</label>
+            <input
+                type="date"
+                name="tglahir"
+                id="tglahir">
+
+            <label for="alamat">Alamat Lengkap</label>
+            <textarea
+                name="alamat"
+                id="alamat"
+                rows="5"
+                placeholder="Masukkan alamat lengkap"></textarea>
+
+            <label>Jenis Kelamin</label>
+            <div class="radio-group">
+                <label>
+                    <input
+                        checked
+                        type="radio"
+                        name="jk"
+                        value="1">
+                    Laki-Laki
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="jk"
+                        value="2">
+                    Perempuan
+                </label>
+            </div>
+
+            <label for="kelas">Kelas</label>
+            <select name="kelas" id="kelas">
+                <option value="xrpl1">X RPL 1</option>
+                <option value="xrpl2">X RPL 2</option>
+                <option value="xtkj1">X TKJ 1</option>
+                <option value="xtkj2">X TKJ 2</option>
+                <option value="xdpib1">X DPIB 1</option>
+                <option value="xdpib2">X DPIB 2</option>
+            </select>
+
+            <label for="foto">Pas Foto</label>
+            <input
+                type="file"
+                name="foto"
+                id="foto"
+                accept="image/*">
+        </fieldset>
+
+        <!-- Ekstrakurikuler -->
+        <fieldset>
+            <legend>Ekstrakurikuler</legend>
+
+            <label>Pilihan Ekstrakurikuler (bisa lebih dari 1):</label>
+
+            <div class="checkbox-group">
+                <label>
+                    <input
+                        type="checkbox"
+                        name="ekskul[]"
+                        value="badminton">
+                    Badminton
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="ekskul[]"
+                        value="sepak bola">
+                    Sepak Bola
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="ekskul[]"
+                        value="futsal">
+                    Futsal
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="ekskul[]"
+                        value="drum band">
+                    Drum Band
+                </label>
+            </div>
+
+            <label for="motivasi">
+                Motivasi Anda Mengikuti Ekskul
+            </label>
+
+            <textarea
+                name="motivasi"
+                id="motivasi"
+                rows="5"
+                placeholder="Tuliskan alasan Anda mengikuti ekstrakurikuler"></textarea>
+        </fieldset>
+
+        <!-- Token -->
+        <label for="token">Token</label>
+        <input
+            required
+            type="password"
+            name="token"
+            id="token"
+            placeholder="Masukkan token">
+
+        <!-- Tombol -->
+        <div class="buttons">
+            <button type="submit" class="btn-kirim">
+                Kirim
+            </button>
+
+            <button
+                type="reset"
+                class="btn-reset"
+                onclick="return confirm('Apakah Anda yakin ingin mereset form?')">
+                Reset
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
