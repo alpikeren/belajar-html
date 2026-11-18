@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1 id="judulUtama">Halaman Awal</h1>
+    </header>
+
+    <nav>
+        <a href="#">Beranda</a>
+    </nav>
+
+    <main>
+        <div class="kartu-profil">
+        <h2>Profil Siswa</h2>
+        <p>Selamat datang di halaman utama</p>
+        </div>
+
+        <section>
+            <article id="kotak-pesan">
+                <p id="pesanStatus">Sedang Memuat...</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Praktikum Pemrograman Web</p>
+    </footer>
+
+    <script>
+        document.getElementById("judulUtama").textContent= "Selamat Datang Siswa";
+        document.getElementById("pesanStatus").textContent= "Data Berhasil Disimpan";
+    </script>
+    
+</body>
+</html>
